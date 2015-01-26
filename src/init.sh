@@ -15,6 +15,7 @@ function Interactive {
     read -p "  email   : " email; echo "EMAIL='$email'" >> $FILE_CONF
     read -p "  theme   : " theme; echo "THEME='$theme'" >> $FILE_CONF
     echo "For modification change '$FILE_CONF'"
+    exit
 }
 
 function Usage {
@@ -31,9 +32,10 @@ GETOPT=$(getopt -o ih\
 
 eval set -- "$GETOPT"
 
+INTERACTIVE=0
 while true; do
     case $1 in
-        -i|--interactive) INTERACTIVE=1;;
+        -i|--interactive) INTERACTIVE=1; shift;;
         -h|--help)        Usage; exit;;
         --)               shift; break
     esac
@@ -47,4 +49,6 @@ for arg do
 done
 
 FILE_CONF=$PATH_SRC/.bekar
+
+let INTERACTIVE && Interactive
 echo -e "NoTitle\nNoSubtitle\nmyemail@domain.com\nrho" | Interactive

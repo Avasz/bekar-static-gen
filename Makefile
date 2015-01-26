@@ -7,7 +7,7 @@ all: build
 build: ${SOURCES}
 	mkdir build
 	cp -p ${SOURCES} build/
-	sed -i '/^trap/d' build/*.sh
+	sed -i '/^trap.*ERR/d' build/*.sh
 	sed -i 's/\.\.\///g' build/main.sh
 
 unlink:
