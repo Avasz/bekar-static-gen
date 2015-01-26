@@ -1,0 +1,31 @@
+#+TITLE: bekar
+#+DATE: Saturday Jan 26 2015
+
+#+STARTUP: showall
+
+*bekar* is a /static web-page generator/ script using *bash*. It means
+~Useless~ in some language, hopeing it doesn't becomes so.
+
+* Setting up
+** Dependencies
+- =emacs=
+- =org-mode= 
+- =GNU sed=
+
+=configure= will check the dependencies
+
+** Install
+   #+BEGIN_SRC bash
+     $ git clone https://github.com/rhoit/bekar
+     $ cd bekar
+     $ ./configure
+     $ make
+     $ sudo make install
+   #+END_SRC
+
+: TIP: see make recipies
+
+*** Archlinux
+    #+BEGIN_SRC bash
+      $ yaourt skf-git
+    #+END_SRC
