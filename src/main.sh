@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 #
-# main.sh
 # bekar controller
 
 set -e
@@ -17,7 +16,7 @@ function Credits {
 
 function Usage {
     echo -e "bekar - A Static Page CLI Generator"
-    echo -e " Usage: bekar [OPTION] <command> [<args>]";
+    echo -e " Usage: bekar <command> [OPTION] [<args>]";
     echo -e "\t-h | --help     Display this message"
     echo -e "\t-c | --credits  Say hello to developers"
     echo -e "\t-v | --verbose  Increase verbosity"
@@ -25,7 +24,7 @@ function Usage {
     echo -e "     init    [PATH]     Create static pages source directory"
     echo -e "     add     [FILE(s)]  Add the page to generation list"
     echo -e "     rm      [FILE(s)]  Remove the page from generation list"
-    echo -e "     gen     [OPTIONS]  Generate a static page"
+    echo -e "     gen     [FILE(s)]  Generate a static page"
     echo -e "     version            Show version information"
 }
 

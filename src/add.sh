@@ -1,28 +1,16 @@
 #!/bin/bash
 
 #
-# add.sh
 # bekar add
 
 set -e
 export WD="$(dirname $(readlink $0 || echo $0))"
 
-function find-up {
-    PATH_CONFIG=$PWD
-    while [[ ! -e "$PATH_CONFIG/$1" ]]; do
-        if [[ "$PATH_CONFIG" == "" ]]; then
-            return 1
-        fi
-        >&4 echo $PATH_CONFIG
-        PATH_CONFIG=${PATH_CONFIG%/*}
-    done
-    >&4 echo PATH_CONFIG: ${PATH_CONFIG}
-    return 0
-}
+source lib.func
 
 function Usage {
     echo -e "add the page to generation list"
-    echo -e " Usage: bekar add [FILE(s)]";
+    echo -e " Usage: bekar add [OPTIONS] [FILE(s)]";
     echo -e "\t-r | --recursive    Ask about config"
     echo -e "\t-v | --verbose      Increase verbosity"
     echo -e "\t-h | --help         Display this message"
@@ -47,7 +35,7 @@ while true; do
     esac
 done
 
-find-up ".bekar" || {
+lib_find-up ".bekar" || {
     echo "Not a bekar static pages source directory"
     exit
 }

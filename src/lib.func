@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#
+# command functions
+
+function lib_find-up {
+    PATH_CONFIG=$PWD
+    while [[ ! -e "$PATH_CONFIG/$1" ]]; do
+        if [[ "$PATH_CONFIG" == "" ]]; then
+            return 1
+        fi
+        >&4 echo $PATH_CONFIG
+        PATH_CONFIG=${PATH_CONFIG%/*}
+    done
+    >&4 echo PATH_CONFIG: ${PATH_CONFIG}
+    return 0
+}
