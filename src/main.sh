@@ -20,13 +20,13 @@ function Usage {
     echo -e " Usage: bekar [OPTION] <command> [<args>]";
     echo -e "\t-h | --help     Display this message"
     echo -e "\t-c | --credits  Say hello to developers"
-    echo -e "\t-v | --verbose  Verbose mode"
+    echo -e "\t-v | --verbose  Increase verbosity"
     echo -e " Commands:"
-    echo -e "    init    [PATH]     Create static pages source directory"
-    echo -e "    add     [FILE(s)]     Add the page to generation list"
-    echo -e "    rm      [FILE(s)]     Remove the page from generation list"
-    echo -e "    gen     [OPTIONS]  Generate a static page"
-    echo -e "    version            Show version information"
+    echo -e "     init    [PATH]     Create static pages source directory"
+    echo -e "     add     [FILE(s)]  Add the page to generation list"
+    echo -e "     rm      [FILE(s)]  Remove the page from generation list"
+    echo -e "     gen     [OPTIONS]  Generate a static page"
+    echo -e "     version            Show version information"
 }
 
 case $1 in
