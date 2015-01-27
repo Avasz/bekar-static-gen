@@ -3,29 +3,77 @@
 
 #+STARTUP: showall
 
-*bekar* is a /static web-page generator/ script using *bash*. It means
-~Useless~ in some language, hopeing it doesn't becomes so.
+*bekar* is a /command line/ /static web-page generator/. It means
+~Useless~ in some language, hoping it doesn't becomes so. This is
+inspired from *git*, *[[https://github.com/moebiuseye/skf][skf]]* and *[[https://github.com/Ypnose/wswsh][wswsh]]*.
 
-* Setting up
-** Dependencies
-- =emacs=
-- =org-mode= 
-- =GNU sed=
+If you are asking why again /static web-page generator/ then this
+might not be for you. It aims integrate *org-mode* and *command-line*,
+generate a _very simple_ static page. Since, there are many
+implementation which I found was either really complex, really simple
+and dull or requires extensive lisp or ruby hacking which is kinda not
+my thing.
 
-=configure= will check the dependencies
+*** THIS IS THE IDEA SKETCH
+Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
 
-** Install
-   #+BEGIN_SRC bash
-     $ git clone https://github.com/rhoit/bekar
-     $ cd bekar
-     $ ./configure
-     $ make
-     $ sudo make install
-   #+END_SRC
+*YOU ARE WELCOMED TO HELP*
 
-: TIP: see make recipies
+*** Setting up
+=configure= can automatically check what you are missing.
+**** Dependencies
+- *emacs* : org-mode
+- *bash*  : GNU sed, GNU awk
 
-*** Archlinux
+
+*** Install
+    *TIP*: see =make= recipes for alternatives.
+
     #+BEGIN_SRC bash
-      $ yaourt skf-git
+      $ git clone https://github.com/rhoit/bekar-static-gen
+      $ cd bekar-static-gen
+      $ ./configure
+      $ make
+      $ sudo make install
     #+END_SRC
+
+*** How to Use
+    Features are still Under development... Below show the architecture
+    and design for now.
+
+    #+BEGIN_SRC bash
+      $ bekar --help
+      bekar - A Static Page CLI Generator
+       Usage: bekar <command> [OPTION(s)] [<args>]
+              -c | --credits  Say hello to developers
+              -h | --help     Display this message
+       Commands:
+           init    [PATH]     Create static pages source directory
+           clone   [URL|PATH] Clone a templates.
+           add     [FILE(s)]  Add the page to generation list
+           rm      [FILE(s)]  Remove the page from generation list
+           gen     [FILE(s)]  Generate a static page
+           git                Integration with git
+           version            Show version information
+    #+END_SRC
+
+**** Getting Started
+     First initialize the generator to the directory.
+
+     #+BEGIN_SRC bash
+       $ bekar clone sample # skip it, if you want to set existing directory
+       $ cd sample
+       $ bekar init         # don't forget too see --help
+       $ bekar add .        # add files to generation list
+       $ bekar gen
+     #+END_SRC
+
+*** Hacking
+    You might want to link it first, so changes can reflect directly
+    without re-installation.
+
+    #+BEGIN_SRC bash
+      $ sudo make link
+    #+END_SRC
+
+    See =src/Makefiles= for sample tests.

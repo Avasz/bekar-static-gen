@@ -16,15 +16,16 @@ function Credits {
 
 function Usage {
     echo -e "bekar - A Static Page CLI Generator"
-    echo -e " Usage: bekar <command> [OPTION] [<args>]";
-    echo -e "\t-h | --help     Display this message"
+    echo -e " Usage: bekar <command> [OPTION(s)] [<args>]"
     echo -e "\t-c | --credits  Say hello to developers"
-    echo -e "\t-v | --verbose  Increase verbosity"
+    echo -e "\t-h | --help     Display this message"
     echo -e " Commands:"
     echo -e "     init    [PATH]     Create static pages source directory"
+    echo -e "     clone   [URL|PATH] Clone a template"
     echo -e "     add     [FILE(s)]  Add the page to generation list"
     echo -e "     rm      [FILE(s)]  Remove the page from generation list"
     echo -e "     gen     [FILE(s)]  Generate a static page"
+    echo -e "     git                Integration with git"
     echo -e "     version            Show version information"
 }
 
@@ -33,6 +34,7 @@ case $1 in
     add)     shift; exec $WD/add.sh $@;;
     rm)      shift; exec $WD/rm.sh $@;;
     gen)     shift; exec $WD/gen.sh $@;;
+    git)     shift; exec $WD/git.sh $@;;
     version) cat $WD/../.version; exit;;
 esac
 

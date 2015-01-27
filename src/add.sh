@@ -6,11 +6,11 @@
 set -e
 export WD="$(dirname $(readlink $0 || echo $0))"
 
-source lib.func
+source $WD/lib.func
 
 function Usage {
     echo -e "add the page to generation list"
-    echo -e " Usage: bekar add [OPTIONS] [FILE(s)]";
+    echo -e " Usage: bekar add [OPTION(s)] [FILE(s)|PATH]";
     echo -e "\t-r | --recursive    Ask about config"
     echo -e "\t-v | --verbose      Increase verbosity"
     echo -e "\t-h | --help         Display this message"

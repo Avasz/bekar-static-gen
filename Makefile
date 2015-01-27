@@ -1,4 +1,4 @@
-SOURCES = $(wildcard src/*.sh)
+SOURCES = $(wildcard src/*.sh) $(wildcard src/*.func)
 SUPPORT = AUTHORS LICENSE .version
 PKG_NAME = bekar
 
@@ -7,7 +7,6 @@ all: build
 build: ${SOURCES}
 	mkdir build
 	cp -p ${SOURCES} build/
-	sed -i '/^trap.*ERR/d' build/*.sh
 	sed -i 's/\.\.\///g' build/main.sh
 
 unlink:

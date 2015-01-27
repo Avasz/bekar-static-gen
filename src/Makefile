@@ -1,3 +1,6 @@
+gen:
+	./gen.sh -vv
+
 add: add-l0 add-l1 add-l2 add-l3
 	@rm -f test.html
 

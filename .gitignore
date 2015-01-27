@@ -1,4 +1,9 @@
 #*
+*#
+*.genlist
 *html
 .bekar
 .skfrc
+build/
+lib/
+themes/
