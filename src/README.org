@@ -1,0 +1,24 @@
+#+TITLE: hacking
+#+DATE: Saturday Feb 05 2015
+
+#+STARTUP: showall
+
+Currently programming parts are written in the bash script.
+
+* Workings
+
+  =main.sh= is the *bekar*'s controller which switch between the
+  commands and pass the *arguments* and *parameters*. *Commands* are
+  executable independently.
+
+* File Descriptors
+
+  | Descriptor | verbosity uses    |
+  |------------+-------------------|
+  | 3, 4       | commands          |
+  | 5          | library functions |
+
+
+* Testing
+
+  See =src/Makefile= for sample tests.

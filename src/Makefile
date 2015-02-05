@@ -1,4 +1,3 @@
-
 gen:
 	./gen.sh -vv
 
@@ -8,7 +7,7 @@ add: add-l0 add-l1 add-l2 add-l3
 add-l0: test.html
 	@rm -fv .bekar
 	@echo -en "\nlevel-0: "
-	./add.sh -vv test.html
+	./add.sh -vvvv
 
 add-l1: test.html
 	@echo -en "\nlevel-1: "

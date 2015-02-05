@@ -47,14 +47,14 @@ function Interactive {
 
     read -p "  email: " email; echo "EMAIL='$email'" >> $FILE_CONF
 
-    read -p "  theme (default: rho): " theme
-    let theme || theme="rho"
+    read -p "  theme (default: bekar): " theme
+    let theme || theme="bekar"
     echo "THEME='$theme'" >> $FILE_CONF
 
     read -p "  url: " url; echo "URL='$url'" >> $FILE_CONF
 
-    read -p "  output (default: ./gen/): " theme
-    let theme || theme=".gen/"
+    read -p "  output (default: ./gen/): " output
+    let output || theme="./gen/"
     echo "OUTPUT='$theme'" >> $FILE_CONF
 
     >&3 cat $FILE_CONF

@@ -5,7 +5,7 @@
 
 *bekar* is a /command line/ /static web-page generator/. It means
 ~Useless~ in some language, hoping it doesn't become so. This is
-inspired from *git*, *[[https://github.com/moebiuseye/skf][skf]]* and *[[https://github.com/Ypnose/wswsh][wswsh]]*.
+inspired from *git*, *[[http://jekyllrb.com/][jekyll]]*, *[[https://github.com/moebiuseye/skf][skf]]* and *[[https://github.com/Ypnose/wswsh][wswsh]]*.
 
 If you are asking why again /static web-page generator/ then this
 might not be for you. It aims to integrate *org-mode* and *command-line*,
@@ -39,7 +39,7 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
     #+END_SRC
 
 *** How to Use
-    Features are still under development... 
+    Features are still under development...
     The following shows the architecture
     and design for now.
 
@@ -78,4 +78,4 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
       $ sudo make link
     #+END_SRC
 
-    See =src/Makefiles= for sample tests.
+    See =src/README.org= for more information.

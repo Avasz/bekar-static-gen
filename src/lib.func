@@ -3,15 +3,19 @@
 #
 # command functions
 
+if [[ ! -e /proc/$$/fd/5 ]]; then
+   exec 5> /dev/null
+fi
+
 function lib_find-up {
     PATH_CONFIG=$PWD
     while [[ ! -e "$PATH_CONFIG/$1" ]]; do
         if [[ "$PATH_CONFIG" == "" ]]; then
             return 1
         fi
-        >&4 echo $PATH_CONFIG
+        >&5 echo $PATH_CONFIG
         PATH_CONFIG=${PATH_CONFIG%/*}
     done
-    >&4 echo PATH_CONFIG: ${PATH_CONFIG}
+    >&5 echo PATH_CONFIG: ${PATH_CONFIG}
     return 0
 }

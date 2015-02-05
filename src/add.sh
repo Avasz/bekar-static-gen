@@ -8,11 +8,6 @@ export WD="$(dirname $(readlink $0 || echo $0))"
 
 source $WD/lib.func
 
-lib_find-up ".bekar" || { # set the PATH_CONFIG
-    echo "Not a bekar static pages source directory"
-    exit
-}
-
 function Usage {
     echo -e "add the page to generation list"
     echo -e " Usage: bekar add [OPTION(s)] [FILE(s)|PATH]";
@@ -39,6 +34,12 @@ while true; do
         --)               shift; break
     esac
 done
+
+## lib_find-up is here for verbose mode
+lib_find-up ".bekar" || { # set the PATH_CONFIG
+    echo "Not a bekar static pages source directory"
+    exit
+}
 
 PATH_FROM_ROOT=${PWD#$PATH_CONFIG/}
 [[ $PATH_FROM_ROOT == $PWD ]] && PATH_FROM_ROOT="."
