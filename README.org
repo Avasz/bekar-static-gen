@@ -32,6 +32,7 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
     #+BEGIN_SRC bash
       $ git clone https://github.com/rhoit/bekar-static-gen
       $ cd bekar-static-gen
+      $ ./configure | bash
       $ ./configure
       $ make
       $ sudo make install

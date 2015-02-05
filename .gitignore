@@ -4,6 +4,8 @@
 *html
 .bekar
 .skfrc
+.version
 build/
+config
 lib/
 themes/

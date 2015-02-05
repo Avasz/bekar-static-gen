@@ -4,10 +4,11 @@ PKG_NAME = bekar
 
 all: build
 
-build: ${SOURCES}
+# fixing .version path
+build: config ${SOURCES}
 	mkdir build
 	cp -p ${SOURCES} build/
-	sed -i 's/\.\.\///g' build/main.sh # fixing .version path
+	sed -i 's/\.\.\///g' build/main.sh
 
 unlink:
 	rm -f /usr/local/bin/${PKG_NAME}
@@ -15,10 +16,10 @@ unlink:
 uninstall: unlink
 	rm -rf /opt/${PKG_NAME}
 
-link: ${SOURCES} ${SUPPORT} unlink
+link: config ${SOURCES} ${SUPPORT} unlink
 	ln -s "$(PWD)/src/main.sh" /usr/local/bin/${PKG_NAME}
 
-alias: ${SOURCES} ${SUPPORT}
+alias: config ${SOURCES} ${SUPPORT}
 	@echo "add alias into '.bashrc' by adding ..."
 	@echo "    alias ${PKG_NAME}='$PWD/main.sh'"
 
@@ -34,5 +35,9 @@ clean:
 dist: build
 	@echo "create PACKAGE-VERSION.tar.gz"
 
+config:
+	@echo "first run $ ./configure"
+
+#@echo "erase what ever done by make all, then clean what ever done by ./configure"
 distclean: clean
-	#@echo "erase what ever done by make all, then clean what ever done by ./configure"
+	rm -rf .config depend

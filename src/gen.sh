@@ -6,7 +6,12 @@
 set -e
 export WD="$(dirname $(readlink $0 || echo $0))"
 
-source lib.func
+source $WD/lib.func
+
+lib_find-up ".bekar" || { # set the PATH_CONFIG
+    echo "Not a bekar static pages source directory"
+    exit
+}
 
 function Usage {
     echo -e "Generate a static page"
@@ -25,11 +30,12 @@ GETOPT=$(getopt -o wo:vh\
 
 eval set -- "$GETOPT"
 
-WATCH=0 VV=2
+WATCH_FLAG=0 VV=2
 exec 3> /dev/null
 exec 4> /dev/null
 while true; do
     case $1 in
+        -w|--watch)       WATCH_FLAG=1; shift;;
         -v|--verbose)     let VV++; eval "exec $VV>&2"; shift;;
         -h|--help)        Usage; exit;;
         --)               shift; break
@@ -37,3 +43,13 @@ while true; do
 done
 
 # emacs 001-blog.org --batch -f org-html-export-to-html --kill
+
+lib_find-up ".bekar" || {
+    echo "Not a bekar static pages source directory"
+    exit
+}
+
+
+function index {
+
+}
