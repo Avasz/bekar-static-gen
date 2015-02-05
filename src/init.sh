@@ -63,7 +63,7 @@ function Interactive {
 }
 
 FILE_CONF=$PATH_SRC/.bekar
-NAME=$(awk -F':' "/$USER/ {print \$5}" /etc/passwd)
+NAME=$USER
 
 let INTERACTIVE && Interactive
 echo -e "\n\n\n\n\n" | Interactive
