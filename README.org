@@ -4,13 +4,13 @@
 #+STARTUP: showall
 
 *bekar* is a /command line/ /static web-page generator/. It means
-~Useless~ in some language, hoping it doesn't becomes so. This is
+~Useless~ in some language, hoping it doesn't become so. This is
 inspired from *git*, *[[https://github.com/moebiuseye/skf][skf]]* and *[[https://github.com/Ypnose/wswsh][wswsh]]*.
 
 If you are asking why again /static web-page generator/ then this
-might not be for you. It aims integrate *org-mode* and *command-line*,
-generate a _very simple_ static page. Since, there are many
-implementation which I found was either really complex, really simple
+might not be for you. It aims to integrate *org-mode* and *command-line*,
+for generating a _very simple_ static page. Since, there are many
+implementation which I found were either really complex, really simple
 and dull or requires extensive lisp or ruby hacking which is kinda not
 my thing.
 
@@ -38,7 +38,8 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
     #+END_SRC
 
 *** How to Use
-    Features are still Under development... Below show the architecture
+    Features are still under development... 
+    The following shows the architecture
     and design for now.
 
     #+BEGIN_SRC bash
