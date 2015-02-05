@@ -15,7 +15,7 @@ function Credits {
 }
 
 function Usage {
-    echo -e "bekar - A Static Page CLI Generator"
+    echo -e "bekar - A CLI based Static Page Generator"
     echo -e " Usage: bekar <command> [OPTION(s)] [<args>]"
     echo -e "\t-c | --credits  Say hello to developers"
     echo -e "\t-h | --help     Display this message"

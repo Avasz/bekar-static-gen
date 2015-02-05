@@ -56,7 +56,7 @@ for arg; do # extra argument
         done
         continue
     }
-    # TODO: expanstion and recurtion
+    # TODO: expansion and recursion
     # [[ -d $arg ]] && {
     #     echo expanding $arg
     #     find $arg -type f #-not -path '*/\.*'

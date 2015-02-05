@@ -1,3 +1,5 @@
+all: gen add add-l0 add-l1 add-l2 add-l3 test.html init clean
+
 gen:
 	./gen.sh -vv
 
