@@ -40,4 +40,4 @@ config:
 
 #@echo "erase what ever done by make all, then clean what ever done by ./configure"
 distclean: clean
-	rm -rf .config depend
+	rm -rf config depend

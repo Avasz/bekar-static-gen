@@ -54,5 +54,4 @@ let FLAG && {
     exit
 }
 
-echo -e $_file > config
 date > config
