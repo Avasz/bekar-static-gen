@@ -7,7 +7,7 @@ all: build
 build: ${SOURCES}
 	mkdir build
 	cp -p ${SOURCES} build/
-	sed -i 's/\.\.\///g' build/main.sh
+	sed -i 's/\.\.\///g' build/main.sh # fixing .version path
 
 unlink:
 	rm -f /usr/local/bin/${PKG_NAME}

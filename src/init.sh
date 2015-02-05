@@ -21,11 +21,11 @@ GETOPT=$(getopt -o ivh\
 
 eval set -- "$GETOPT"
 
-INTERACTIVE=0 VV=2
+INTERACTIVE_FLAG=0 VV=2
 exec 3> /dev/null
 while true; do
     case $1 in
-        -i|--interactive) INTERACTIVE=1; shift;;
+        -i|--interactive) INTERACTIVE_FLAG=1; shift;;
         -v|--verbose)     let VV++; eval "exec $VV>&2"; shift;;
         -h|--help)        Usage; exit;;
         --)               shift; break
@@ -42,7 +42,7 @@ done
 function Interactive {
     rm -f $FILE_CONF
     read -p "  author (default: $NAME): " author
-    let author || author=$NAME
+    let author || author=${NAME:-$USER}
     echo "AUTHOR='$author'" >> $FILE_CONF
 
     read -p "  email: " email; echo "EMAIL='$email'" >> $FILE_CONF
@@ -65,5 +65,5 @@ function Interactive {
 FILE_CONF=$PATH_SRC/.bekar
 NAME=$(awk -F':' "/$USER/ {print \$5}" /etc/passwd)
 
-let INTERACTIVE && Interactive
+let INTERACTIVE_FLAG && Interactive
 echo -e "\n\n\n\n\n" | Interactive
