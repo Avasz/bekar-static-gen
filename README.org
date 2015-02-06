@@ -2,6 +2,7 @@
 #+DATE: Saturday Jan 26 2015
 
 #+STARTUP: showall
+#+OPTIONS: html-postamble:nil
 
 *bekar* is a /command line/ /static web-page generator/. It means
 ~Useless~ in some language, hoping it doesn't become so. This is
@@ -22,9 +23,9 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
 *** Setting up
 =configure= can automatically check what you are missing.
 **** Dependencies
-- *emacs* : org-mode
-- *bash*  : GNU sed, GNU awk
-
+- *emacs*    : org-mode
+- *bash*     : GNU sed, GNU awk
+- *markdown*
 
 *** Install
     *TIP*: see =make= recipes for alternatives.
@@ -55,6 +56,7 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
            add     [FILE(s)]  Add the page to generation list
            rm      [FILE(s)]  Remove the page from generation list
            gen     [FILE(s)]  Generate a static page
+           status             Show current status
            git                Integration with git
            version            Show version information
     #+END_SRC

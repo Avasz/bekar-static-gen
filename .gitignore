@@ -2,11 +2,13 @@
 *#
 *.genlist
 *html
+*markdown
+*md
 .bekar
 .skfrc
 .version
 build/
-depend/
 config
+depend/
 lib/
 themes/
