@@ -1,9 +1,14 @@
 #*
 *#
 *.genlist
-*html
+*markdown
+*md
 .bekar
 .skfrc
+.version
 build/
+config
+depend/
 lib/
+static-gen/
 themes/

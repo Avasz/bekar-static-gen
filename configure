@@ -2,6 +2,16 @@
 
 set -e
 
+# swaping stdout & stderr, for pipe redirection SEE FLAG check below
+exec 3>&2
+exec 2>&1
+exec 1>&3
+
+if [ -d .git ]; then
+    git describe --tags > .version
+    cat .version
+fi
+
 echo "Checking: dependencies"
 list="sed awk emacs"
 for item in $list; do
@@ -9,7 +19,39 @@ for item in $list; do
     which $item
 done
 
-if [ -d .git ]; then
-    git describe --tags > .version
-    cat .version
-fi
+function check_dependencies {
+    if [ -e  $_file ]; then
+        echo -e "\tOK $_file"
+    else
+        echo -e "\tNOT FOUND $_file"; FLAG=1
+        >&2 echo wget $_link -O $_file
+    fi
+}
+
+FLAG=0
+
+mkdir -p depend/js
+mkdir -p depend/css
+
+echo "Checking: external dependencies"
+_file="depend/css/prettify.css"
+_link="wget https://raw.githubusercontent.com/mooz/org-js/gh-pages/prettify.css"
+check_dependencies
+
+_file="depend/js/prettify.js"
+_link="https://raw.githubusercontent.com/mooz/org-js/gh-pages/prettify.js"
+check_dependencies
+
+_file="depend/js/org.js"
+_link="https://raw.githubusercontent.com/mooz/org-js/master/org.js"
+check_dependencies
+
+let FLAG && {
+    echo
+    echo "To download the assects run"
+    echo "    $ ./configure | bash"
+    echo "and re-run the config again"
+    exit
+}
+
+date > config

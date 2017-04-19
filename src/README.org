@@ -1,0 +1,95 @@
+#+TITLE: Under the Hood
+#+DATE: Friday, Feb 06 2015
+
+#+STARTUP: showall
+#+OPTIONS: num:0 toc:nil
+#+OPTIONS: html-postamble:nil
+
+Currently programming parts are written in the bash script.
+
+*** Note
+    *THIS IS THE IDEA DRAFT, EVERY THING MIGHT NOT WORK*
+
+* Support
+
+  | markup  | blog | pages |
+  |---------+------+-------|
+  | org-mod | yes  | yes   |
+  |         |      |       |
+
+* Workings
+
+  =main.sh= is the *bekar*'s controller which switch between the
+  commands and pass the *arguments* and *parameters*. *Commands* are
+  executable independently.
+
+* Testing
+
+  See =src/Makefile= for sample tests.
+
+* Layout
+
+  |            | id       | Description                  |
+  |------------+----------+------------------------------|
+  | navigation | #nav     | top fixed ribbon of the page |
+  | panel      | #panel   | vertical panel               |
+  | content    | #content |                              |
+  | footer     | #footer  |                              |
+
+
+* Working of the Generator
+
+  =gen.sh= handles the plain html generation, and linking the
+  pages. If the content is written in supported markup, it will be
+  converted automatically.
+
+** Tags
+
+   You can directly tags the page/folder and change it behaviour
+   accordingly. For blog tag page/folder as blog.
+
+   List of Default tags
+
+   | Name   | Description |
+   |--------+-------------|
+   | #blog  |             |
+   | #home  |             |
+   | #index |             |
+   | #about |             |
+
+* Blog
+
+  Unlike the plain html generation of markup contents, blogs are
+  loaded by the javascript,
+
+* Working with org-mode
+
+** Removing Footer
+
+   blog would not require this method.
+
+   #+BEGIN_SRC org-mod
+     #+OPTIONS: html-postamble:nil
+   #+END_SRC
+
+* Convetions
+
+  These are the guideline convention used.
+
+** Naming
+
+*** path, flags variables
+    - add `PATH_`, `FLAG_` suffix respectively
+
+*** library variables
+    - add `LIB_` suffix
+
+*** library functions
+    - add `lib_` suffix
+
+** File Descriptors
+
+   | Descriptor | verbosity uses    |
+   |------------+-------------------|
+   | 3, 4       | commands          |
+   | 5          | library functions |

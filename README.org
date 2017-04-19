@@ -2,10 +2,11 @@
 #+DATE: Saturday Jan 26 2015
 
 #+STARTUP: showall
+#+OPTIONS: html-postamble:nil
 
 *bekar* is a /command line/ /static web-page generator/. It means
 ~Useless~ in some language, hoping it doesn't become so. This is
-inspired from *git*, *[[https://github.com/moebiuseye/skf][skf]]* and *[[https://github.com/Ypnose/wswsh][wswsh]]*.
+inspired from *git*, *[[http://jekyllrb.com/][jekyll]]*, *[[https://github.com/moebiuseye/skf][skf]]* and *[[https://github.com/Ypnose/wswsh][wswsh]]*.
 
 If you are asking why again /static web-page generator/ then this
 might not be for you. It aims to integrate *org-mode* and *command-line*,
@@ -22,9 +23,9 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
 *** Setting up
 =configure= can automatically check what you are missing.
 **** Dependencies
-- *emacs* : org-mode
-- *bash*  : GNU sed, GNU awk
-
+- *emacs*    : org-mode
+- *bash*     : GNU sed, GNU awk
+- *markdown*
 
 *** Install
     *TIP*: see =make= recipes for alternatives.
@@ -32,13 +33,14 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
     #+BEGIN_SRC bash
       $ git clone https://github.com/rhoit/bekar-static-gen
       $ cd bekar-static-gen
+      $ ./configure | bash
       $ ./configure
       $ make
       $ sudo make install
     #+END_SRC
 
 *** How to Use
-    Features are still under development... 
+    Features are still under development...
     The following shows the architecture
     and design for now.
 
@@ -54,6 +56,7 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
            add     [FILE(s)]  Add the page to generation list
            rm      [FILE(s)]  Remove the page from generation list
            gen     [FILE(s)]  Generate a static page
+           status             Show current status
            git                Integration with git
            version            Show version information
     #+END_SRC
@@ -77,4 +80,4 @@ Still *UNDER DEVELOPMENT*, *GENERATOR DOESN'T WORK*
       $ sudo make link
     #+END_SRC
 
-    See =src/Makefiles= for sample tests.
+    See =src/README.org= for more information.
