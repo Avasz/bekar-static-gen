@@ -8,6 +8,7 @@ if [[ ! -e /proc/$$/fd/5 ]]; then
 fi
 
 function lib_find-up {
+    # find the file recursively up directory
     PATH_CONFIG=$PWD
     while [[ ! -e "$PATH_CONFIG/$1" ]]; do
         if [[ "$PATH_CONFIG" == "" ]]; then

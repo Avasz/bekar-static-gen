@@ -26,13 +26,13 @@ function Usage {
     echo -e "     rm      [FILE(s)]  Remove the page from generation list"
     echo -e "     gen     [FILE(s)]  Generate a static page"
     echo -e "     status             Show current status"
-    echo -e "     git                Integration with git"
+    echo -e "     tag                Tag page or folder"
     echo -e "     version            Show version information"
 }
 
 case $1 in
     init)    shift; exec $WD/init.sh $@;;
-    clone)    shift; exec $WD/clone.sh $@;;
+    clone)   shift; exec $WD/clone.sh $@;;
     add)     shift; exec $WD/add.sh $@;;
     rm)      shift; exec $WD/rm.sh $@;;
     gen)     shift; exec $WD/gen.sh $@;;

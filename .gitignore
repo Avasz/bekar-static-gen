@@ -1,7 +1,6 @@
 #*
 *#
 *.genlist
-*html
 *markdown
 *md
 .bekar
@@ -11,4 +10,5 @@ build/
 config
 depend/
 lib/
+static-gen/
 themes/

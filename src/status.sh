@@ -39,4 +39,7 @@ lib_find-up ".bekar" || { # set the PATH_CONFIG
     exit
 }
 
-cat $PATH_CONFIG/.genlist
+while read i; do
+    echo -n "$i"
+    [ -e "$i" ] || echo -e " Deleted" && echo
+done < $PATH_CONFIG/.genlist

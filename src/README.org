@@ -43,15 +43,31 @@ Currently programming parts are written in the bash script.
   pages. If the content is written in supported markup, it will be
   converted automatically.
 
+** Tags
+
+   You can directly tags the page/folder and change it behaviour
+   accordingly. For blog tag page/folder as blog.
+
+   List of Default tags
+
+   | Name   | Description |
+   |--------+-------------|
+   | #blog  |             |
+   | #home  |             |
+   | #index |             |
+   | #about |             |
+
 * Blog
 
   Unlike the plain html generation of markup contents, blogs are
   loaded by the javascript,
 
-
 * Working with org-mode
 
 ** Removing Footer
+
+   blog would not require this method.
+
    #+BEGIN_SRC org-mod
      #+OPTIONS: html-postamble:nil
    #+END_SRC

@@ -11,9 +11,11 @@ source $WD/lib.func
 function Usage {
     echo -e "Add the page to generation list"
     echo -e " Usage: bekar add [OPTION(s)] [FILE(s)|PATH]"
-    echo -e "\t-r | --recursive    Ask about config"
-    echo -e "\t-v | --verbose      Increase verbosity"
-    echo -e "\t-h | --help         Display this message"
+    echo -e "\t-r | --recursive      Ask about config"
+    echo -e "\t-t | --tag [TAGS]     set tags (only comma separated)"
+    echo -e "\t-i | --index [folder] create index"
+    echo -e "\t-v | --verbose        Increase verbosity"
+    echo -e "\t-h | --help           Display this message"
 }
 
 GETOPT=$(getopt -o rvh\
